@@ -65,7 +65,7 @@ ul li {
   /* Style the background */
   background-color: var(--square-background-color);
 
-  /* Make the cursor a pointer by default */
+  /* Make the cursor a pointer by default. This will have the cursor turn into a hand when hovering over */
   cursor: pointer;
 
   /* Center the text in the LI using flexbox */
@@ -76,4 +76,15 @@ ul li {
   /* Don't let the squares become too small */
   min-width: 3rem;
   min-height: 10rem;
+}
+
+/* Add styles for cells that are taken and not-allowed click style. We will selectively add to states of cells. */
+ul li.taken {
+  cursor: not-allowed;
+}
+ul li.small {
+  font-size: 4rem;
+}
+ul li.not-allowed-click {
+  background-color: red;
 }
