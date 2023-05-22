@@ -19,6 +19,11 @@ function handleClickSquare(event: MouseEvent) {
   // change its textContent
 
   if (thingClickedOn instanceof HTMLLIElement) {
+    if (thingClickedOn.classList.contains('taken')) {
+      console.log('Not available to click!')
+      return
+    }
+
     thingClickedOn.textContent = currentPlayer
 
     // Adds the taken class so that we SHOW the user
@@ -28,7 +33,7 @@ function handleClickSquare(event: MouseEvent) {
     if (currentPlayer === 'X') {
       currentPlayer = 'O'
     } else {
-      currentPlayer = 'X'
+      currentPlayer = 
     }
   }
 }
