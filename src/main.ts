@@ -18,7 +18,7 @@ function handleClickSquare(event: MouseEvent) {
   // the thingClickedOn is an LI element, and thus we can
   // change its textContent
   if (thingClickedOn instanceof HTMLLIElement) {
-    // If the element ALREADY has 'taken' class marked, we shouldn't 
+    // If the element ALREADY has 'taken' class marked, we shouldn't
     // let them click again! We do this by ENDING (return)
     // from the function RIGHT AWAY
     if (thingClickedOn.classList.contains('taken')) {
@@ -35,7 +35,7 @@ function handleClickSquare(event: MouseEvent) {
     if (currentPlayer === 'X') {
       currentPlayer = 'O'
     } else {
-      currentPlayer = 
+      currentPlayer = 'X'
     }
   }
 }
