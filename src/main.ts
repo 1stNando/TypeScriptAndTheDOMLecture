@@ -24,6 +24,12 @@ function handleClickSquare(event: MouseEvent) {
     // Adds the taken class so that we SHOW the user
     // they can't select this item!
     thingClickedOn.classList.add('taken')
+
+    if (currentPlayer === 'X') {
+      currentPlayer = 'O'
+    } else {
+      currentPlayer = 'X'
+    }
   }
 }
 const allSquares = document.querySelectorAll('li')
