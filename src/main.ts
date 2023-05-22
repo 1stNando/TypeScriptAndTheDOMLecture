@@ -2,6 +2,10 @@ import './style.css'
 
 //const firstListItem = document.querySelector('li')
 
+// Define a state for "currentPlayer" and state the limitations available
+// This means that currentPlayer is a string, but can *only* be the string X or the string O
+let currentPlayer: 'X' | 'O' = 'X'
+
 // Defines a method for us to handle the click
 function handleClickSquare(event: MouseEvent) {
   // Get the target of the click
@@ -15,7 +19,11 @@ function handleClickSquare(event: MouseEvent) {
   // change its textContent
 
   if (thingClickedOn instanceof HTMLLIElement) {
-    thingClickedOn.textContent = 'X'
+    thingClickedOn.textContent = currentPlayer
+
+    // Adds the taken class so that we SHOW the user
+    // they can't select this item!
+    thingClickedOn.classList.add('taken')
   }
 }
 const allSquares = document.querySelectorAll('li')
@@ -32,3 +40,5 @@ allSquares.forEach((square) =>
 //console.log(allSquares)
 
 // now we use a forEach loop to addEventListener. Note we cannot add this via querySelectorAll() method. Because what is returned is a NodeList. So we must do this instead
+
+// The above code is safeKeeping
