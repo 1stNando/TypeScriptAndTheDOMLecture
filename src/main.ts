@@ -6,6 +6,9 @@ import './style.css'
 // This means that currentPlayer is a string, but can *only* be the string X or the string O
 let currentPlayer: 'X' | 'O' = 'X'
 
+// add another STATE to account for moveCount
+let moveCounter = 0
+
 // Defines a method for us to handle the click
 function handleClickSquare(event: MouseEvent) {
   // Get the target of the click
@@ -25,6 +28,9 @@ function handleClickSquare(event: MouseEvent) {
       console.log('Nope, not available to click')
       return
     }
+
+    // Increment moveCounter
+    moveCounter++
 
     thingClickedOn.textContent = currentPlayer
 
