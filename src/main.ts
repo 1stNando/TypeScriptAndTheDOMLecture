@@ -17,10 +17,12 @@ function handleClickSquare(event: MouseEvent) {
   // - 2. Let's TypeScript know that *inside* this if statement
   // the thingClickedOn is an LI element, and thus we can
   // change its textContent
-
   if (thingClickedOn instanceof HTMLLIElement) {
+    // If the element ALREADY has 'taken' class marked, we shouldn't 
+    // let them click again! We do this by ENDING (return)
+    // from the function RIGHT AWAY
     if (thingClickedOn.classList.contains('taken')) {
-      console.log('Not available to click!')
+      console.log('Nope, not available to click')
       return
     }
 
