@@ -43,7 +43,7 @@ function handleClickSquare(event: MouseEvent) {
 
     // Increment the moveCounter!
     moveCounter++
-
+    // This could be placed at the top. Its more efficient here instead.
     const header = document.querySelector('h1')
 
     if (header instanceof HTMLHeadingElement) {
