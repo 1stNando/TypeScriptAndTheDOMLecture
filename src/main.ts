@@ -11,6 +11,9 @@ let moveCounter = 0
 
 // Defines a method for us to handle the click
 function handleClickSquare(event: MouseEvent) {
+  // Adds event HANDLER, to halt bubbling here. Prevents potential bubbling to a further up hypothetical parent
+  event.stopPropagation()
+
   // Get the target of the click
   const thingClickedOn = event.target
 
