@@ -29,9 +29,6 @@ function handleClickSquare(event: MouseEvent) {
       return
     }
 
-    // Increment moveCounter
-    moveCounter++
-
     thingClickedOn.textContent = currentPlayer
 
     // Adds the taken class so that we SHOW the user
@@ -43,6 +40,15 @@ function handleClickSquare(event: MouseEvent) {
     } else {
       currentPlayer = 'X'
     }
+
+    // Increment the moveCounter!
+    moveCounter++
+
+    const header = document.querySelector('h1')
+
+    if (header instanceof HTMLHeadingElement) {
+      header.textContent = `Move ${moveCounter} of Tic Tac Toe`
+    }
   }
 }
 const allSquares = document.querySelectorAll('li')
@@ -51,6 +57,7 @@ allSquares.forEach((square) =>
   square.addEventListener('click', handleClickSquare)
 )
 
+/////////////////
 //firstListItem?.addEventListener('click', handleClickSquare)
 
 // Select all squares to apply querySelector to all 'li' items
