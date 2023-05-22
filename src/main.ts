@@ -14,6 +14,9 @@ function handleClickSquare(event: MouseEvent) {
   // Adds event HANDLER, to halt bubbling here. Prevents potential bubbling to a further up hypothetical parent
   event.stopPropagation()
 
+  // Example for future reference, prevent your NATURAL behavior. OVERRIDE it!
+  event.preventDefault()
+
   // Get the target of the click
   const thingClickedOn = event.target
 
