@@ -51,13 +51,21 @@ function handleClickSquare(event: MouseEvent) {
     }
   }
 }
-const allSquares = document.querySelectorAll('li')
+// const allSquares = document.querySelectorAll('li')
 
-allSquares.forEach((square) =>
-  square.addEventListener('click', handleClickSquare)
-)
+// allSquares.forEach((square) =>
+//   square.addEventListener('click', handleClickSquare)
+// )
 
-/////////////////
+// This will tell it to wait on click. BUBBLES up to the parent. The 'li' doesn't handle the click, so it
+// bubbles up to the parent 'ul'
+const gameBoard = document.querySelector('ul')
+
+if (gameBoard instanceof HTMLUListElement) {
+  gameBoard?.addEventListener('click', handleClickSquare)
+}
+
+//Next week we will user more effective and better tools with REACT
 //firstListItem?.addEventListener('click', handleClickSquare)
 
 // Select all squares to apply querySelector to all 'li' items
