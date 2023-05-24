@@ -12,6 +12,7 @@ let moveCounter = 0
 // 1ST STEP:
 // Defines a method for us to handle the click
 function handleClickSquare(event: MouseEvent) {
+  // stopPropagating/PreventDefault
   // Adds event HANDLER, to halt bubbling here. Prevents potential bubbling to a further up hypothetical parent
   event.stopPropagation()
 
@@ -30,14 +31,15 @@ function handleClickSquare(event: MouseEvent) {
   if (thingClickedOn instanceof HTMLLIElement) {
     // If the element ALREADY has 'taken' class marked, we shouldn't
     // let them click again! We do this by ENDING (return)
-    // from the function RIGHT AWAY
+    // from the function RIGHT AWAY. This acts like a GUARD clause.
     if (thingClickedOn.classList.contains('taken')) {
-      console.log('Nope, not available to click')
+      console.log('Nope, you already clicked here!')
       return
     }
 
     thingClickedOn.textContent = currentPlayer
 
+    // BELLOW DEALS WITH THE SQUARES CLICK LOGIC///////////////////////////////////////////////
     // Adds the taken class so that we SHOW the user
     // they can't select this item! Changing its class after the event of click happens
     thingClickedOn.classList.add('taken')
@@ -64,7 +66,8 @@ function handleClickSquare(event: MouseEvent) {
 //   square.addEventListener('click', handleClickSquare)
 // )
 
-// This will tell it to wait on click. BUBBLES up to the parent. The 'li' doesn't handle the click, so it
+// Example of EVENT BUBBLING:
+// This will tell it to wait on click. BUBBLing up to the parent. The 'li' doesn't handle the click, so it
 // bubbles up to the parent 'ul'
 const gameBoard = document.querySelector('ul')
 
