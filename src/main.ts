@@ -39,7 +39,7 @@ function handleClickSquare(event: MouseEvent) {
     thingClickedOn.textContent = currentPlayer
 
     // Adds the taken class so that we SHOW the user
-    // they can't select this item!
+    // they can't select this item! Changing its class after the event of click happens
     thingClickedOn.classList.add('taken')
 
     if (currentPlayer === 'X') {

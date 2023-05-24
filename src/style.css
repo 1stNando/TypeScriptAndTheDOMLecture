@@ -78,7 +78,7 @@ ul li {
   min-height: 10rem;
 }
 
-/* Add styles for cells that are taken and not-allowed click style. We will selectively add to states of cells. */
+/* Add styles for cells that are taken and not-allowed click style. We will selectively add to states of cells with the following. Very interactive! */
 ul li.taken {
   cursor: not-allowed;
 }
