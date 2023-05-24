@@ -9,6 +9,7 @@ let currentPlayer: 'X' | 'O' = 'X'
 // add another STATE to account for moveCount
 let moveCounter = 0
 
+// 1ST STEP:
 // Defines a method for us to handle the click
 function handleClickSquare(event: MouseEvent) {
   // Adds event HANDLER, to halt bubbling here. Prevents potential bubbling to a further up hypothetical parent
