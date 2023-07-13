@@ -76,7 +76,6 @@ if (gameBoard instanceof HTMLUListElement) {
 }
 
 //Next week we will user more effective and better tools with REACT
-//firstListItem?.addEventListener('click', handleClickSquare)
 
 // Select all squares to apply querySelector to all 'li' items
 
